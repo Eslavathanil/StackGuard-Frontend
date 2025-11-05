@@ -2,7 +2,7 @@
 
 > **Task:** Implement authentication/user flow for StackGuard frontend (Sign-In/Sign-Up, Configuration, Dashboard) and deploy to Vercel. This README documents setup, structure, validation rules, and deployment steps.
 
-
+**Live Demo:** [https://stackguardweb.netlify.app/auth](https://stackguardweb.netlify.app/auth)
 ## Project Overview
 
 This frontend implements the following flow required by the task:
