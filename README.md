@@ -2,7 +2,6 @@
 
 > **Task:** Implement authentication/user flow for StackGuard frontend (Sign-In/Sign-Up, Configuration, Dashboard) and deploy to Vercel. This README documents setup, structure, validation rules, and deployment steps.
 
----
 
 ## Project Overview
 
@@ -22,8 +21,6 @@ This frontend implements the following flow required by the task:
 
 Design reference: [https://www.figma.com/design/ZaJtOkR5AQxfic3cNhgCjN/Untitled?node-id=0-1&t=hghlYCOrIqMnRGCm-1](https://www.figma.com/design/ZaJtOkR5AQxfic3cNhgCjN/Untitled?node-id=0-1&t=hghlYCOrIqMnRGCm-1)
 
----
-
 ## Features
 
 * Toggle-able Sign-In / Sign-Up UI (client-side validation)
@@ -33,7 +30,6 @@ Design reference: [https://www.figma.com/design/ZaJtOkR5AQxfic3cNhgCjN/Untitled?
 * Clean component structure and sample usage of a component library (suggested: `shadcn/ui` or `Ant Design`)
 * Instructions for deployment to Vercel and pushing to GitHub
 
----
 
 ## Tech Stack (suggested)
 
@@ -44,7 +40,6 @@ Design reference: [https://www.figma.com/design/ZaJtOkR5AQxfic3cNhgCjN/Untitled?
 
 > The README uses generic commands; adjust if you scaffolded with Next.js.
 
----
 
 ## Quick Start (local)
 
@@ -88,7 +83,6 @@ npm run build
 npm run start:prod
 ```
 
----
 
 ## Validation Rules
 
@@ -98,7 +92,6 @@ npm run start:prod
 
 Client-side validation feedback should be visible and user-friendly (inline errors, disabled submit buttons when invalid).
 
----
 
 ## Routing & Auth Flow (implementation notes)
 
@@ -115,7 +108,6 @@ Suggested route guard approach:
 
 Security note: localStorage is used here for demonstration only. For production, use secure, HttpOnly cookies and a real backend.
 
----
 
 ## Suggested Folder Structure
 
@@ -138,8 +130,6 @@ stackguard-frontend/
 └─ README.md
 ```
 
----
-
 ## Component & Code Style Tips
 
 * Keep forms small and focused. Separate validation logic into `utils/validators.js`.
@@ -147,7 +137,6 @@ stackguard-frontend/
 * Use small presentational components (e.g. `FormField`, `ToggleAuthMode`) to simplify tests and reuse.
 * Keep side effects in hooks (e.g. `useAuth`, `useConfigKey`) for clarity.
 
----
 
 ## Example pseudo-code for route guard (React Router)
 
@@ -170,10 +159,9 @@ export default function ConfigRequiredRoute({ children }) {
     return <Navigate to="/config" replace />;
   }
   return children;
-}
+
 ```
 
----
 
 ## UX Enhancements (good-to-have)
 
@@ -183,7 +171,7 @@ export default function ConfigRequiredRoute({ children }) {
 * Copy-to-clipboard helper for the configuration key preview area (if necessary).
 * Component library: using `shadcn/ui` or `antd` will quickly make forms look polished.
 
----
+
 
 ## Deployment to Vercel
 
@@ -201,31 +189,7 @@ export default function ConfigRequiredRoute({ children }) {
   "start": "vite preview",
   "build": "vite build"
 }
-```
 
-(or Next.js equivalents: `dev`, `build`, `start`).
-
----
-
-## GitHub Repository & Mail Template
-
-When submitting the task by email, include:
-
-* GitHub repo URL
-* Vercel deployed URL
-* Short usage instructions (how to sign in, sample config key or how to generate it)
-
-**Suggested email body**:
-
-```
-Subject: StackGuard Frontend — Submission
-
-Hi [Recipient Name],
-
-Please find my submission for the StackGuard Frontend task.
-
-Repository: <your-github-repo-url>
-Deployed (Vercel): <your-vercel-url>
 
 How to test:
 1. Open the Auth page: /auth
@@ -233,31 +197,7 @@ How to test:
 3. After sign-in, you will be redirected to /config — enter a config key between 100 and 1000 characters.
 4. Once the config key is accepted, you'll be forwarded to /dashboard.
 
-If you have any questions or need changes, please let me know.
 
-Best regards,
-[Your Name]
-```
-
----
-
-## Tests
-
-* Unit-test validators and simple components (Jest + React Testing Library recommended).
-* Test route guards to ensure unauthorized access is blocked.
-
----
-
-## Troubleshooting
-
-* `npm install` ENOENT error: ensure you're in the project root and `package.json` exists. If missing, initialize with `npm init` or clone the correct repo.
-* If Vercel build fails, check build logs and ensure `build` script in `package.json` matches the framework.
-
----
-
-## License
-
-MIT
 
 ---
 
